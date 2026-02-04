@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For   💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    background-color: #ffd6e7;
+    overflow-x: hidden;
+}
+
+/* GENERAL FADE */
+.fade {
+    animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ---------------- PIN PAD VAULT ---------------- */
+#lockScreen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffd6e7;
+}
+
+.vault-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 35px;
+    color: #d63384;
+    margin-bottom: 10px;
+}
+
+.hints-box {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 13px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    max-width: 300px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+#pinDisplay {
+    width: 200px;
+    height: 50px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    letter-spacing: 10px;
+    margin-bottom: 20px;
+    border: 3px solid white;
+    transition: 0.3s;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.num-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    font-size: 20px;
+    color: #d63384;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: 0.2s;
+    padding: 0;
+}
+
+.num-btn:active {
+    transform: scale(0.9);
+    background: #fce4ec;
+}
+
+/* ---------------- QUESTION PAGE ---------------- */
+#questionPage {
+
+    height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+
+
+.question {
+
+    font-size: 28px;
+
+    min-height: 40px;
+
+    margin: 20px 0;
+
+}
+
+
+
+button {
+
+    padding: 15px 35px;
+
+    font-size: 18px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    margin: 10px;
+
+    transition: 0.3s;
+
+}
+
+
+
+.yes-btn {
+
+    background-color: #ff4da6;
+
+    color: white;
+
+}
+
+
+
+.no-btn {
+
+    background-color: #999;
+
+    color: white;
+
+}
+
+
+
+.bottom-text {
+
+    margin-top: 40px;
+
+    font-size: 14px;
+
+    font-style: italic;
+
+    color: #a61e4d;
+
+}
+
+
+
+/* Floating hearts */
+
+.heart {
+
+    position: fixed;
+
+    bottom: -20px;
+
+    font-size: 20px;
+
+    animation: floatUp 6s linear infinite;
+
+    opacity: 0.7;
+
+}
+
+
+
+@keyframes floatUp {
+
+    0% { transform: translateY(0); opacity: 0.7; }
+
+    100% { transform: translateY(-110vh); opacity: 0; }
+
+}
+
+
+
+/* GIFs that appear */
+
+.gif-pop {
+
+    position: fixed;
+
+    width: 150px;
+
+    animation: fadeInOut 2s forwards;
+
+    z-index: 1000;
+
+}
+
+
+
+@keyframes fadeInOut {
+
+    0% { opacity: 0; transform: scale(0.5); }
+
+    50% { opacity: 1; transform: scale(1.2); }
+
+    100% { opacity: 0; transform: scale(1); }
+
+}
+/* ---------------- MAGAZINE PAGE ---------------- */
+#magazinePage {
+    display: none;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+    background-image: url('https://e0.pxfuel.com/wallpapers/75/588/desktop-wallpaper-red-single-plain-solid-color-one-colour-97070c.jpg');
+    background-size: cover;
+    background-position: center;
+    color: black;
+    position: relative;
+}
+
+.magazine-header, .footer {
+    width: 100%;
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 60px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+    padding: 20px 0;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 60px;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 0.7; }
+    100% { transform: translateY(-110vh); opacity: 0; }
+}
+
+.gif-pop {
+    position: fixed;
+    width: 150px;
+    animation: fadeInOut 2s forwards;
+    z-index: 1000;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0; transform: scale(1); }
+}
+</style>
+</head>
+
+<body>
+
+<div id="lockScreen">
+    <h2 class="vault-title">The Love Vault 🔒</h2>
+    
+    <div class="hints-box">
+        <strong>Hints (4 Numbers):</strong><br>
+        1. Null<br>
+        2. Annivesary month <br>
+        3. Day of footbaall game <br>
+     
+    </div>
+
+    <div id="pinDisplay"></div>
+
+    <div class="keypad">
+        <button class="num-btn" onclick="press(1)">1</button>
+        <button class="num-btn" onclick="press(2)">2</button>
+        <button class="num-btn" onclick="press(3)">3</button>
+        <button class="num-btn" onclick="press(4)">4</button>
+        <button class="num-btn" onclick="press(5)">5</button>
+        <button class="num-btn" onclick="press(6)">6</button>
+        <button class="num-btn" onclick="press(7)">7</button>
+        <button class="num-btn" onclick="press(8)">8</button>
+        <button class="num-btn" onclick="press(9)">9</button>
+        <button class="num-btn" onclick="clearPin()">C</button>
+        <button class="num-btn" onclick="press(0)">0</button>
+        <button class="num-btn" onclick="checkPin()">✔</button>
+    </div>
+    <p id="feedback" style="margin-top: 15px; font-weight: bold; min-height: 20px;"></p>
+</div>
+
+<div id="mainContent" style="display: none;">
+    
+    <div id="questionPage">
+        <div class="question" id="typedText"></div>
+        <button class="yes-btn" id="yesBtn">YES 💘</button>
+        <button class="no-btn" id="noBtn">No</button>
+        <div style="margin-top: 40px; font-size: 14px; font-style: italic; color: #a61e4d;">mm I don't think no is an option.</div>
+    </div>
+
+    <div id="loadingScreen" style="display:none; height: 100vh; justify-content: center; align-items: center; font-family: 'Great Vibes', cursive; font-size: 50px; color: #d63384;">
+        Preparing something special… 💖
+    </div>
+
+    <div id="magazinePage">
+        <div class="magazine-header">Valentine Edition</div>
+
+        <div class="section">
+            <div style="flex:1; display: flex; justify-content: center;">
+                <img src="https://i.postimg.cc/Y0tcw7yx/Whats-App-Image-2026-02-03-at-11-31-21-PM.jpg" style="width: 90%; max-width: 350px; border-radius: 20px; box-shadow: 0px 4px 15px rgba(0,0,0,0.2);">
+            </div>
+            <div style="flex:1">
+                <h1 style="font-family: 'Great Vibes', cursive; font-size: 50px;">ROOD</h1>
+                <p>Many people talk about love as memories with a person .But with you,you are the definition of love ..you have showed me what love truly is …how to love properly…how to cherish someone so much that it’s impossible to dream about a future without you .Everyday and time spent with you is full of love.<br><br>You have loved me at my worst ,during good times and through and through.I want to show you love too,love that understands you,love that cares for you ,love that doesn’t underestimate you.<br><br>Love with you is easy, love with you is eternal , love with you is lasting and love with you is a dream.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div style="flex:1">
+                <h2>10 Reasons Why I Love You 💗</h2>
+                <ul>
+                    <li>1. Your hugs feel like home</li>
+                    <li>2. You make me feel safe</li>
+                    <li>3. You always make me smile</li>
+                    <li>4. You work so hard</li>
+                    <li>5. Your kiss melts me</li>
+                    <li>6. The way you make me laugh</li>
+                    <li>7. You support me in everything</li>
+                    <li>8. You are my soulmate</li>
+                    <li>9. You have the biggest heart</li>
+                    <li>10. You love me the right way</li>
+                </ul>
+            </div>
+            <div style="flex:1; display: flex; justify-content: center;"> 
+ <img src="https://i.postimg.cc/c4Jj7FqJ/Whats-App-Image-2026-02-03-at-11-34-12-PM.jpg" style="width: 90%; max-width: 350px; border-radius: 20px; box-shadow: 0px 4px 15px rgba(0,0,0,0.2);">
+            </div>
+        </div>
+
+        <div class="footer">Happy Valentine’s Day 💗</div>
+    </div>
+</div>
+
+<script>
+/* PIN LOGIC */
+let enteredPin = "";
+const correctPin = "0829";
+const display = document.getElementById("pinDisplay");
+const feedback = document.getElementById("feedback");
+
+function press(num) {
+    if (enteredPin.length < 4) {
+        enteredPin += num;
+        display.innerText = "*".repeat(enteredPin.length);
+    }
+}
+
+function clearPin() {
+    enteredPin = "";
+    display.innerText = "";
+    display.style.borderColor = "white";
+    display.style.backgroundColor = "white";
+    feedback.innerText = "";
+}
+
+function checkPin() {
+    if (enteredPin === correctPin) {
+        display.style.borderColor = "#4CAF50"; // Green blink
+        display.style.backgroundColor = "#e8f5e9";
+        feedback.style.color = "#4CAF50";
+        feedback.innerText = "Access Granted! 💗";
+        
+        setTimeout(() => {
+            document.getElementById("lockScreen").style.display = "none";
+            document.getElementById("mainContent").style.display = "block";
+            typeWriter(); // Start typing effect
+        }, 1000);
+    } else {
+        display.style.borderColor = "#f44336"; // Red blink
+        display.style.backgroundColor = "#ffebee";
+        feedback.style.color = "#f44336";
+        feedback.innerText = "Oops! Try again... 🌹";
+        
+        setTimeout(clearPin, 1500);
+    }
+}
+
+/* VALENTINE TYPING EFFECT */
+const text = "Will you be my Valentine?";
+let i = 0;
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("typedText").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 80);
+    }
+}
+
+/* FLOATING HEARTS */
+for (let i = 0; i < 25; i++) {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💗";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+    document.body.appendChild(heart);
+}
+
+/* YES/NO BUTTON LOGIC */
+let yesScale = 1;
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const loading = document.getElementById("loadingScreen");
+const questionPage = document.getElementById("questionPage");
+const magazine = document.getElementById("magazinePage");
+
+const gifs = [
+    "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2puZHdnNWtpc3JhMTVpdDlqbnVmMGhzMTRsbzVtcWc1cGlkOTZtMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/12SBwtRR9BnWg/giphy.gif",
+    "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3dW1oYWs4N2lyOThsMGg2em92amZzdm5lb3JvMDAya3FpeDFvYXE3OSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TydZAW0DVCbGE/giphy.gif",
+    "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3aWQ3b2o0NjhqcGFibjB4eGVrdmI4c2ZhcWJsN3owOW1odjJvbGdnNiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/9XLVqZM3JsSZr0GKUq/giphy.gif",
+    "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3NjAybmw2bGQ3Z3NnZTI5dzJhYzdlZjk4dHB3MzZxazF0ODRyenY5aiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/DfY90p285xXPOnW4QL/giphy.gif",
+    "https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3OXp3eHJ5emQ3bWtiMGZscnA3bXg5bzYwbHMzZHRmMXI2bWRjc3VtbSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/qVRIpKRVaACVdKJjD4/giphy.gif"
+];
+
+noBtn.addEventListener("click", function() {
+    yesScale += 0.2;
+    yesBtn.style.transform = "scale(" + yesScale + ")";
+    const gif = document.createElement("img");
+    gif.src = gifs[Math.floor(Math.random() * gifs.length)];
+    gif.className = "gif-pop";
+    gif.style.top = Math.random() * (window.innerHeight - 200) + "px";
+    gif.style.left = Math.random() * (window.innerWidth - 200) + "px";
+    document.body.appendChild(gif);
+    setTimeout(() => { gif.remove(); }, 2000);
+});
+
+yesBtn.addEventListener("click", function() {
+    questionPage.style.display = "none";
+    loading.style.display = "flex";
+    setTimeout(() => {
+        loading.style.display = "none";
+        magazine.style.display = "block";
+        magazine.classList.add("fade");
+    }, 2000);
+});
+</script>
+
+</body>
+</html>
